@@ -73,12 +73,13 @@ function Moto() {
 
     return ( 
         <div>
-            
+            {/* <img src="/public/img/roxo.jfif" alt=""/> */}
             {
                 verInicio == true &&
-                <div>
-                    <h1>Quiz sobre motos</h1>
-                    <button onClick={ ()=> {alterarVerInicio(false); alteraVerP1(true)} }>Iniciar</button>
+                <div className="inicio" >
+                    <h1 className='letramaior'>Quiz sobre motos</h1>
+                    <p>Teste seus conhecimentos sobre motos com nosso quiz interativo!</p> <br/> <br/>
+                    <button className='btn' onClick={ ()=> {alterarVerInicio(false); alteraVerP1(true)} }>Iniciar</button>
                 </div>
             }
 
@@ -89,7 +90,7 @@ function Moto() {
             {
                 ver1 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>1. Qual o apelido da Yamaha RD 350?</p>
                     <label><input name="p1" type="radio" onChange={ ()=> alteraP1(0)}/>Mônica</label>
                     <br/>
@@ -101,14 +102,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP1(false) ;alteraVerP2(true)} }>Próximo</button>
+                    <button className="btn" onClick={ ()=> {alteraVerP1(false) ;alteraVerP2(true)} }>Próximo</button>
                 </div>
             }
 
 {
                 ver2 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>2. Qual é a principal característica da moto Harley-Davidson Softail?</p>
                     <label><input name="p2" type="radio" onChange={ ()=> alteraP2(0)}/>Estrutura com chassi rígido</label>
                     <br/>
@@ -119,7 +120,7 @@ function Moto() {
                     <label><input name="p2" type="radio" onChange={ ()=> alteraP2(0)}/>Carenagem esportiva</label>
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP2(false) ;alteraVerP3(true)} } >Próximo</button>
+                    <button className="btn" onClick={ ()=> {alteraVerP2(false) ;alteraVerP3(true)} } >Próximo</button>
                 </div>
             }
             
@@ -127,7 +128,7 @@ function Moto() {
 {
                 ver3 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>3. Em que ano a Honda XRE 300 foi lançada no Brasil?</p>
                     <label><input name="p3" type="radio" onChange={ ()=> alteraP3(0)}/>2005</label>
                     <br/>
@@ -139,14 +140,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP3(false) ;alteraVerP4(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP3(false) ;alteraVerP4(true)} } >Próximo</button>
                 </div>
 }
 
 {
                 ver4 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>4. Qual a cilindrada da moto Kawasaki Ninja 300, que foi muito popular no Brasil?</p>
                     <label><input name="p4" type="radio" onChange={ ()=> alteraP4(0)}/>150cc</label>
                     <br/>
@@ -158,14 +159,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP4(false) ;alteraVerP5(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP4(false) ;alteraVerP5(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver5 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>5. Qual modelo da Honda foi considerado um ícone das motos de baixa cilindrada no Brasil na década de 1980?</p>
                     <label><input name="p5" type="radio" onChange={ ()=> alteraP5(0)}/>Honda CB 500</label>
                     <br/>
@@ -177,14 +178,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP5(false) ;alteraVerP6(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP5(false) ;alteraVerP6(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver6 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>6. A qual marca pertence a moto esportiva conhecida como CBR 1000RR?</p>
                     <label><input name="p6" type="radio" onChange={ ()=> alteraP6(0)}/>Yamaha</label>
                     <br/>
@@ -196,14 +197,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP6(false) ;alteraVerP7(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP6(false) ;alteraVerP7(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver7 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>7. Qual a principal característica da motocicleta Harley-Davidson Iron 883, que foi popular no Brasil?</p>
                     <label><input name="p7" type="radio" onChange={ ()=> alteraP7(1)}/>Motor V-twin de 883cc</label>
                     <br/>
@@ -215,14 +216,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP7(false) ;alteraVerP8(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP7(false) ;alteraVerP8(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver8 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>8. Qual era o apelido da Honda XLX 350R? </p>
                     <label><input name="p8" type="radio" onChange={ ()=> alteraP8(1)}/>Xiselão</label>
                     <br/>
@@ -234,14 +235,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP8(false) ;alteraVerP9(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP8(false) ;alteraVerP9(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver9 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>9. A Honda CRF 230F é uma moto voltada para qual tipo de uso?</p>
                     <label><input name="p9" type="radio" onChange={ ()=> alteraP9(1)}/>Enduro e off-road</label>
                     <br/>
@@ -253,14 +254,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP9(false) ;alteraVerP10(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP9(false) ;alteraVerP10(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver10 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>10. Qual modelo da Yamaha foi lançado no Brasil como uma versão de entrada para a linha de motos esportivas?</p>
                     <label><input name="p10" type="radio" onChange={ ()=> alteraP10(1)}/>Yamaha R3</label>
                     <br/>
@@ -272,14 +273,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP10(false) ;alteraVerP11(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP10(false) ;alteraVerP11(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver11 == true &&
     
-                <div>
+                <div className="inicio" >
                     <p>11. Qual foi a primeira moto japonesa a ser vendida no Brasil?</p>
                     <label><input name="p11" type="radio" onChange={ ()=> alteraP11(0)}/>Honda CB 750</label>
                     <br/>
@@ -291,14 +292,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP11(false) ;alteraVerP12(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP11(false) ;alteraVerP12(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver12 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>12. Qual foi o principal modelo de motocicleta da Kawasaki utilizado em competições de Superbike no Brasil?</p>
                     <label><input name="p12" type="radio" onChange={ ()=> alteraP12(0)}/>Kawasaki Ninja 300</label>
                     <br/>
@@ -310,14 +311,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP12(false) ;alteraVerP13(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP12(false) ;alteraVerP13(true)} } >Próximo</button>
                 </div>
             }
 
 {
                 ver13 == true &&
     
-                <div>
+                <div className="inicio" >
                     <p>13. Qual a principal inovação da moto Ducati Monster 1200 que foi lançada no Brasil em 2014?</p>
                     <label><input name="p13" type="radio" onChange={ ()=> alteraP13(0)}/>Motor com turbo</label>
                     <br/>
@@ -329,14 +330,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP13(false) ;alteraVerP14(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP13(false) ;alteraVerP14(true)} } >Próximo</button>
                 </div>
             }
 
             {
                 ver14 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>14. Qual moto é famosa por ser a "moto da polícia" no Brasil?</p>
                     <label><input name="p14" type="radio" onChange={ ()=> alteraP14(0)}/>Yamaha XT 660</label>
                     <br/>
@@ -348,14 +349,14 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP14(false) ;alteraVerP15(true)} } >Próximo</button>
+                    <button className='btn' onClick={ ()=> {alteraVerP14(false) ;alteraVerP15(true)} } >Próximo</button>
                 </div>
             }
 
             {
                 ver15 == true &&
     
-                <div>
+                <div className="inicio">
                     <p>15. Qual era o nome original da Bico de Pato? </p>
                     <label><input name="p15" type="radio" onChange={ ()=> alteraP15(1)}/>Suzuki DR800</label>
                     <br/>
@@ -367,19 +368,21 @@ function Moto() {
 
                     <br/>
 
-                    <button onClick={ ()=> {alteraVerP15(false) ; alteraVerFinal(true)} } >Próximo</button>
+                    <button  className='btn' onClick={ ()=> {alteraVerP15(false) ; alteraVerFinal(true)} } >Próximo</button>
                 </div>
             }
 
             {               
                 verFinal == true && (
-                    <div>
+                    <div className="inicio" >
+                        
                     <h1>Resultado</h1>
                     <p>Nota: {p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + p11 + p12 + p13 + p14 + p15}</p>
 
                     {/* User name input field */}
-                    <div>
+                    <div >
                         <label>Insira seu nome: </label>
+                        <br/>
                         <input 
                             type="text" 
                             value={userName} 
@@ -387,9 +390,9 @@ function Moto() {
                             placeholder="Digite seu nome aqui"
                         />
                     </div>
-
+                        <br/>
                     {/* Button to finalize quiz */}
-                    <button onClick={handleFinishQuiz}>Finalizar Quiz</button>
+                    <button  className='btn' onClick={handleFinishQuiz}>Finalizar Quiz</button>
 
                     {/* Display ranking as a table */}
                     <h2>Ranking</h2>
