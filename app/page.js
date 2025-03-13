@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import "./tabela.css"
+
 function Moto() {
     const [p1, alteraP1] = useState(0);
     const [p2, alteraP2] = useState(0);
@@ -64,8 +66,8 @@ function Moto() {
         // Sort by score (descending order)
         newRanking.sort((a, b) => b.score - a.score);
 
-        setRanking(newRanking); // Update ranking state
-        alteraVerFinal(true); // Show final screen
+        setRanking(newRanking); 
+        alteraVerFinal(true); 
     };
 
     return ( 
@@ -394,7 +396,7 @@ function Moto() {
                         <thead>
                             <tr>
                                 <th>Posição</th>
-                                <th>Nome</th>
+                                <th className="espacoNome" >Nome</th>
                                 <th>Pontuação</th>
                             </tr>
                         </thead>
@@ -402,7 +404,7 @@ function Moto() {
                             {ranking.map((user, index) => (
                                 <tr key={index}>
                                     <td>{index + 1}</td>
-                                    <td>{user.name}</td>
+                                    <td className="espacoNome" >{user.name}</td>
                                     <td>{user.score}</td>
                                 </tr>
                             ))}
