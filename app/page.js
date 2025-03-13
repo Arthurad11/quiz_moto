@@ -1,47 +1,72 @@
 'use client'
 
-import { use, useState } from "react";
+import { useEffect, useState } from "react";
 
 function Moto() {
-    const [ p1, alteraP1 ] = useState(0)
-    const [ p2, alteraP2 ] = useState(0)
-    const [ p3, alteraP3 ] = useState(0)
-    const [ p4, alteraP4 ] = useState(0)
-    const [ p5, alteraP5 ] = useState(0)
-    const [ p6, alteraP6 ] = useState(0)
-    const [ p7, alteraP7 ] = useState(0)
-    const [ p8, alteraP8 ] = useState(0)
-    const [ p9, alteraP9 ] = useState(0)
-    const [ p10, alteraP10 ] = useState(0)
-    const [ p11, alteraP11 ] = useState(0)
-    const [ p12, alteraP12 ] = useState(0)
-    const [ p13, alteraP13 ] = useState(0)
-    const [ p14, alteraP14 ] = useState(0)
-    const [ p15, alteraP15 ] = useState(0)
+    const [p1, alteraP1] = useState(0);
+    const [p2, alteraP2] = useState(0);
+    const [p3, alteraP3] = useState(0);
+    const [p4, alteraP4] = useState(0);
+    const [p5, alteraP5] = useState(0);
+    const [p6, alteraP6] = useState(0);
+    const [p7, alteraP7] = useState(0);
+    const [p8, alteraP8] = useState(0);
+    const [p9, alteraP9] = useState(0);
+    const [p10, alteraP10] = useState(0);
+    const [p11, alteraP11] = useState(0);
+    const [p12, alteraP12] = useState(0);
+    const [p13, alteraP13] = useState(0);
+    const [p14, alteraP14] = useState(0);
+    const [p15, alteraP15] = useState(0);
 
-    const [ ver1, alteraVerP1 ] = useState(false)
-    const [ ver2, alteraVerP2 ] = useState(false)
-    const [ ver3, alteraVerP3 ] = useState(false)
-    const [ ver4, alteraVerP4 ] = useState(false)
-    const [ ver5, alteraVerP5 ] = useState(false)
-    const [ ver6, alteraVerP6 ] = useState(false)
-    const [ ver7, alteraVerP7 ] = useState(false)
-    const [ ver8, alteraVerP8 ] = useState(false)
-    const [ ver9, alteraVerP9 ] = useState(false)
-    const [ ver10, alteraVerP10 ] = useState(false)
-    const [ ver11, alteraVerP11 ] = useState(false)
-    const [ ver12, alteraVerP12 ] = useState(false)
-    const [ ver13, alteraVerP13 ] = useState(false)
-    const [ ver14, alteraVerP14 ] = useState(false)
-    const [ ver15, alteraVerP15 ] = useState(false)
-    const [ verInicio, alterarVerInicio ] = useState(true)
-    const [ verFinal, alteraVerFinal ] = useState(false)
+    const [ver1, alteraVerP1] = useState(false);
+    const [ver2, alteraVerP2] = useState(false);
+    const [ver3, alteraVerP3] = useState(false);
+    const [ver4, alteraVerP4] = useState(false);
+    const [ver5, alteraVerP5] = useState(false);
+    const [ver6, alteraVerP6] = useState(false);
+    const [ver7, alteraVerP7] = useState(false);
+    const [ver8, alteraVerP8] = useState(false);
+    const [ver9, alteraVerP9] = useState(false);
+    const [ver10, alteraVerP10] = useState(false);
+    const [ver11, alteraVerP11] = useState(false);
+    const [ver12, alteraVerP12] = useState(false);
+    const [ver13, alteraVerP13] = useState(false);
+    const [ver14, alteraVerP14] = useState(false);
+    const [ver15, alteraVerP15] = useState(false);
+    const [verInicio, alterarVerInicio] = useState(true);
+    const [verFinal, alteraVerFinal] = useState(false);
 
+    const [ranking, setRanking] = useState([]);  // Ranking array
+    const [userName, setUserName] = useState(""); // For capturing the user's name
 
-    
-    
+    useEffect(() => {
+        const savedRanking = JSON.parse(localStorage.getItem("ranking")) || [];
+        setRanking(savedRanking);
+    }, []);
 
+    // Save ranking to localStorage whenever it changes
+    useEffect(() => {
+        localStorage.setItem("ranking", JSON.stringify(ranking));
+    }, [ranking]);
 
+    const handleFinishQuiz = () => {
+        if (!userName) {
+            alert("Por favor, insira seu nome antes de finalizar.");
+            return;
+        }
+
+        // Calculate score
+        const score = p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + p11 + p12 + p13 + p14 + p15;
+
+        // Save user score to ranking
+        const newRanking = [...ranking, { name: userName, score }];
+        // Sort by score (descending order)
+        newRanking.sort((a, b) => b.score - a.score);
+
+        setRanking(newRanking); // Update ranking state
+        alteraVerFinal(true); // Show final screen
+    };
 
     return ( 
         <div>
@@ -343,17 +368,53 @@ function Moto() {
                 </div>
             }
 
-            {
-                verFinal == true &&
-
-                <div>
+            {               
+                verFinal == true && (
+                    <div>
                     <h1>Resultado</h1>
-                    
                     <p>Nota: {p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9 + p10 + p11 + p12 + p13 + p14 + p15}</p>
-                </div>
-            }
 
-        </div>
+                    {/* User name input field */}
+                    <div>
+                        <label>Insira seu nome: </label>
+                        <input 
+                            type="text" 
+                            value={userName} 
+                            onChange={(e) => setUserName(e.target.value)} 
+                            placeholder="Digite seu nome aqui"
+                        />
+                    </div>
+
+                    {/* Button to finalize quiz */}
+                    <button onClick={handleFinishQuiz}>Finalizar Quiz</button>
+
+                    {/* Display ranking as a table */}
+                    <h2>Ranking</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Nome</th>
+                                <th>Pontuação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {ranking.map((user, index) => (
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.score}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
+        
+            
+            </div>
+
+        
         
     );
 }
