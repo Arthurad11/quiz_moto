@@ -2,7 +2,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     text-align: center;
-    background-image: url('img/roxo.jfif');
+    background-image: url('/public/img/roxo.jfif');
     background-size: cover;
     background-position: center;
     color: #f0eeef;
@@ -110,7 +110,7 @@ h1 {
     height: 3rem;
     background-size: 300% 300%;
     cursor: pointer;
-    backdrop-filter: blur(1rem);
+    
     border-radius: 5rem;
     transition: 0.5s;
     animation: gradient_301 5s ease infinite;
@@ -135,7 +135,7 @@ h1 {
     height: 100%;
     overflow: hidden;
     transition: 0.5s;
-    backdrop-filter: blur(1rem);
+    
     border-radius: 5rem;
   }
   
