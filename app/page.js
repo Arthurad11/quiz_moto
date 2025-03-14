@@ -957,7 +957,10 @@ function Moto() {
 				<div className="inicio">
 					<p>15. Qual era o nome original da Bico de Pato? </p>
 
-					<img width="400px" src="./img/bico_de_pato.jpg" />
+					<img
+						width="400px"
+						src="https://storage.googleapis.com/images-homolog-moto.usadosbr.com/img/montadoras/galery/Road_King_Police_FLHPI+Road_King_Police_FLHPI+jpg1458309264-v1.jpg"
+					/>
 					<div className="options">
 						<label className={"option " + selecionado[0].replace('"', "&quot;")}>
 							<input
