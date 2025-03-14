@@ -79,7 +79,7 @@ function Moto() {
 			{verInicio == true && (
 				<div className="inicio">
 					<h1 className="letramaior">Quiz sobre motos</h1>
-					<p>Teste seus conhecimentos sobre motos com nosso quiz interativo&excl;</p> <br /> <br />
+					<p>Teste seus conhecimentos sobre motos com nosso quiz interativo!</p> <br /> <br />
 					<img width="400px" src="https://mobilidade.estadao.com.br/wp-content/uploads/2023/03/nova-bmw-s-1000-rr_1.jpg" />
 					<br />
 					<br />
