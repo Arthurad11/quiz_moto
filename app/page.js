@@ -43,7 +43,7 @@ function Moto() {
 	const [selecionado, alteraSelecionado] = useState(["", "", "", ""]);
 
 	const [ranking, setRanking] = useState([]); // Ranking array
-	const [userName, setUserName] = useState(""); // For capturing the user's name
+	const [userName, setUserName] = useState(""); 
 
 	useEffect(() => {
 		const savedRanking = JSON.parse(localStorage.getItem("ranking")) || [];
