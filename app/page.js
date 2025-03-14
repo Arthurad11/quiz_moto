@@ -40,6 +40,8 @@ function Moto() {
 	const [verInicio, alterarVerInicio] = useState(true);
 	const [verFinal, alteraVerFinal] = useState(false);
 
+	const [selecionado, alteraSelecionado] = useState(["", "", "", ""]);
+
 	const [ranking, setRanking] = useState([]); // Ranking array
 	const [userName, setUserName] = useState(""); // For capturing the user's name
 
@@ -84,6 +86,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alterarVerInicio(false);
 							alteraVerP1(true);
 						}}>
@@ -98,24 +101,44 @@ function Moto() {
 
 					<img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/c62e02120929765.60bb7d9bc9f44.jpg" width="400px" />
 
-					<div className="options">
-						<label className="option">
-							<input name="p1" type="radio" className="option" onChange={() => alteraP1(0)} />
+					<div className={"options"}>
+						<label className={"option " + selecionado[0]}>
+							<input
+								name="p1"
+								type="radio"
+								className={"option " + selecionado[0]}
+								onChange={() => alteraP1(0) + alteraSelecionado(["selecionado", "", "", ""])}
+							/>
 							Mônica
 						</label>
 						<br />
-						<label className="option">
-							<input name="p1" type="radio" className="option" onChange={() => alteraP1(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input
+								name="p1"
+								type="radio"
+								className={"option " + selecionado[0]}
+								onChange={() => alteraP1(0) + alteraSelecionado(["", "selecionado", "", ""])}
+							/>
 							Sete Gallo
 						</label>
 						<br />
-						<label className="option">
-							<input name="p1" type="radio" className="option" onChange={() => alteraP1(1)} />
+						<label className={"option " + selecionado[2]}>
+							<input
+								name="p1"
+								type="radio"
+								className={"option " + selecionado[0]}
+								onChange={() => alteraP1(1) + alteraSelecionado(["", "", "selecionado", ""])}
+							/>
 							Viúva Negra
 						</label>
 						<br />
-						<label className="option">
-							<input name="p1" type="radio" className="option" onChange={() => alteraP1(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input
+								name="p1"
+								type="radio"
+								className={"option " + selecionado[0]}
+								onChange={() => alteraP1(0) + alteraSelecionado(["", "", "", "selecionado"])}
+							/>
 							Tucunaré
 						</label>
 					</div>
@@ -124,6 +147,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP1(false);
 							alteraVerP2(true);
 						}}>
@@ -138,23 +162,23 @@ function Moto() {
 
 					<img width="400px" src="https://media-cdn.tripadvisor.com/media/photo-s/16/04/e2/18/a-harley-davidson-softail.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p2" type="radio" className="option" onChange={() => alteraP2(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p2" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP2(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Estrutura com chassi rígido
 						</label>
 						<br />
-						<label className="option">
-							<input name="p2" type="radio" className="option" onChange={() => alteraP2(1)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p2" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP2(1)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Suspensão traseira oculta
 						</label>
 						<br />
-						<label className="option">
-							<input name="p2" type="radio" className="option" onChange={() => alteraP2(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p2" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP2(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Motor de 1200cc
 						</label>
 						<br />
-						<label className="option">
-							<input name="p2" type="radio" className="option" onChange={() => alteraP2(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p2" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP2(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Carenagem esportiva
 						</label>
 					</div>
@@ -163,6 +187,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP2(false);
 							alteraVerP3(true);
 						}}>
@@ -178,23 +203,23 @@ function Moto() {
 					<img width="380px" src="https://www.motox.com.br/publix/imagens2009/999990063_001.jpg" />
 
 					<div className="options">
-						<label className="option">
-							<input name="p3" type="radio" className="option" onChange={() => alteraP3(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p3" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP3(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							2005
 						</label>
 						<br />
-						<label className="option">
-							<input name="p3" type="radio" className="option" onChange={() => alteraP3(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p3" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP3(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							2008
 						</label>
 						<br />
-						<label className="option">
-							<input name="p3" type="radio" className="option" onChange={() => alteraP3(1)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p3" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP3(1)+alteraSelecionado(["", "", "selecionado", ""])} />
 							2010
 						</label>
 						<br />
-						<label className="option">
-							<input name="p3" type="radio" className="option" onChange={() => alteraP3(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p3" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP3(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							2012
 						</label>
 					</div>
@@ -204,6 +229,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP3(false);
 							alteraVerP4(true);
 						}}>
@@ -218,23 +244,23 @@ function Moto() {
 
 					<img width="365px" src="https://i.pinimg.com/originals/29/e1/fd/29e1fd5a1886c261f642f8867a7e40d9.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p4" type="radio" className="option" onChange={() => alteraP4(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p4" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP4(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							150cc
 						</label>
 						<br />
-						<label className="option">
-							<input name="p4" type="radio" className="option" onChange={() => alteraP4(1)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p4" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP4(1)+alteraSelecionado(["", "selecionado", "", ""])} />
 							300cc
 						</label>
 						<br />
-						<label className="option">
-							<input name="p4" type="radio" className="option" onChange={() => alteraP4(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p4" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP4(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							500cc
 						</label>
 						<br />
-						<label className="option">
-							<input name="p4" type="radio" className="option" onChange={() => alteraP4(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p4" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP4(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							650cc
 						</label>
 					</div>
@@ -244,6 +270,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP4(false);
 							alteraVerP5(true);
 						}}>
@@ -259,23 +286,23 @@ function Moto() {
 					<img width="400px" src="https://www.honda.com.br/motos/sites/hda/files/2018-08/4_Uma-asa-de-peso.jpg" />
 
 					<div className="options">
-						<label className="option">
-							<input name="p5" type="radio" className="option" onChange={() => alteraP5(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p5" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP5(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Honda CB 500
 						</label>
 						<br />
-						<label className="option">
-							<input name="p5" type="radio" className="option" onChange={() => alteraP5(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p5" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP5(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Honda XR 250
 						</label>
 						<br />
-						<label className="option">
-							<input name="p5" type="radio" className="option" onChange={() => alteraP5(1)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p5" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP5(1)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Honda CG 125
 						</label>
 						<br />
-						<label className="option">
-							<input name="p5" type="radio" className="option" onChange={() => alteraP5(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p5" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP5(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Honda Titan 150
 						</label>
 					</div>
@@ -285,6 +312,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP5(false);
 							alteraVerP6(true);
 						}}>
@@ -299,23 +327,23 @@ function Moto() {
 
 					<img width="400px" src="https://riodejaneiro.pernambucomotos.com.br/k/imagens/11010354.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p6" type="radio" className="option" onChange={() => alteraP6(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p6" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP6(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Yamaha
 						</label>
 						<br />
-						<label className="option">
-							<input name="p6" type="radio" className="option" onChange={() => alteraP6(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p6" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP6(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Suzuki
 						</label>
 						<br />
-						<label className="option">
-							<input name="p6" type="radio" className="option" onChange={() => alteraP6(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p6" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP6(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Kawasaki
 						</label>
 						<br />
-						<label className="option">
-							<input name="p6" type="radio" className="option" onChange={() => alteraP6(1)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p6" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP6(1)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Honda
 						</label>
 					</div>
@@ -325,6 +353,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP6(false);
 							alteraVerP7(true);
 						}}>
@@ -339,23 +368,23 @@ function Moto() {
 
 					<img width="400px" src="https://img0.icarros.com/dbimg/imgadicionalnoticia/4/84648_1.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p7" type="radio" className="option" onChange={() => alteraP7(1)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p7" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP7(1)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Motor V-twin de 883cc
 						</label>
 						<br />
-						<label className="option">
-							<input name="p7" type="radio" className="option" onChange={() => alteraP7(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p7" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP7(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Motor 4 cilindros em linha
 						</label>
 						<br />
-						<label className="option">
-							<input name="p7" type="radio" className="option" onChange={() => alteraP7(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p7" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP7(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Design esportivo
 						</label>
 						<br />
-						<label className="option">
-							<input name="p7" type="radio" className="option" onChange={() => alteraP7(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p7" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP7(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Pneus largos para off-road
 						</label>
 					</div>
@@ -365,6 +394,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP7(false);
 							alteraVerP8(true);
 						}}>
@@ -379,23 +409,23 @@ function Moto() {
 
 					<img width="290px" src="https://img.olx.com.br/images/95/951454821295515.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p8" type="radio" className="option" onChange={() => alteraP8(1)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p8" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP8(1)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Xiselão
 						</label>
 						<br />
-						<label className="option">
-							<input name="p8" type="radio" className="option" onChange={() => alteraP8(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p8" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP8(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Xiselinha
 						</label>
 						<br />
-						<label className="option">
-							<input name="p8" type="radio" className="option" onChange={() => alteraP8(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p8" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP8(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Tucunaré
 						</label>
 						<br />
-						<label className="option">
-							<input name="p8" type="radio" className="option" onChange={() => alteraP8(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p8" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP8(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Van Gogh
 						</label>
 					</div>
@@ -405,6 +435,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP8(false);
 							alteraVerP9(true);
 						}}>
@@ -419,23 +450,23 @@ function Moto() {
 
 					<img width="380px" src="https://www.revistapro.com.br/uploads/images/2021/08/image_750x_61087d6a64d37.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p9" type="radio" className="option" onChange={() => alteraP9(1)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p9" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP9(1)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Enduro e off-road
 						</label>
 						<br />
-						<label className="option">
-							<input name="p9" type="radio" className="option" onChange={() => alteraP9(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p9" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP9(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Estrada e viagens longas
 						</label>
 						<br />
-						<label className="option">
-							<input name="p9" type="radio" className="option" onChange={() => alteraP9(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p9" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP9(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Circuitos de motocross
 						</label>
 						<br />
-						<label className="option">
-							<input name="p9" type="radio" className="option" onChange={() => alteraP9(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p9" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP9(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Uso urbano e street
 						</label>
 					</div>
@@ -445,6 +476,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP9(false);
 							alteraVerP10(true);
 						}}>
@@ -459,23 +491,23 @@ function Moto() {
 
 					<img width="400px" src="https://www.mototrialibiuna.com.br/wp-content/uploads/2015/04/Yamaha-Motorcycles-Logo.png" />
 					<div className="options">
-						<label className="option">
-							<input name="p10" type="radio" className="option" onChange={() => alteraP10(1)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p10" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP10(1)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Yamaha R3
 						</label>
 						<br />
-						<label className="option">
-							<input name="p10" type="radio" className="option" onChange={() => alteraP10(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p10" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP10(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Yamaha MT-07
 						</label>
 						<br />
-						<label className="option">
-							<input name="p10" type="radio" className="option" onChange={() => alteraP10(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p10" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP10(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Yamaha YZF-R1
 						</label>
 						<br />
-						<label className="option">
-							<input name="p10" type="radio" className="option" onChange={() => alteraP10(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p10" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP10(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Yamaha XTZ 250
 						</label>
 					</div>
@@ -485,6 +517,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP10(false);
 							alteraVerP11(true);
 						}}>
@@ -499,23 +532,23 @@ function Moto() {
 
 					<img width="350px" src="https://logosmarcas.net/wp-content/uploads/2021/09/Marcas-de-motocicletas-Japonesas.png" />
 					<div className="options">
-						<label className="option">
-							<input name="p11" type="radio" className="option" onChange={() => alteraP11(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p11" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP11(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Honda CB 750
 						</label>
 						<br />
-						<label className="option">
-							<input name="p11" type="radio" className="option" onChange={() => alteraP11(1)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p11" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP11(1)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Yamaha RD 350
 						</label>
 						<br />
-						<label className="option">
-							<input name="p11" type="radio" className="option" onChange={() => alteraP11(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p11" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP11(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Kawasaki Z1000
 						</label>
 						<br />
-						<label className="option">
-							<input name="p11" type="radio" className="option" onChange={() => alteraP11(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p11" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP11(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Suzuki Titan 125
 						</label>
 					</div>
@@ -525,6 +558,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP11(false);
 							alteraVerP12(true);
 						}}>
@@ -537,25 +571,25 @@ function Moto() {
 				<div className="inicio">
 					<p>12. Qual foi o principal modelo de motocicleta da Kawasaki utilizado em competições de Superbike no Brasil?</p>
 					<div className="options">
-						<img width="400px" src="https://www.autoracing.com.br/wp-content/uploads/2021/07/Superbike-Brasil-2021.jpg" />
+						<img className="p12" width="400px" src="https://www.autoracing.com.br/wp-content/uploads/2021/07/Superbike-Brasil-2021.jpg" />
 
-						<label className="option">
-							<input name="p12" type="radio" className="option" onChange={() => alteraP12(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p12" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP12(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Kawasaki Ninja 300
 						</label>
 						<br />
-						<label className="option">
-							<input name="p12" type="radio" className="option" onChange={() => alteraP12(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p12" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP12(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Kawasaki Z800
 						</label>
 						<br />
-						<label className="option">
-							<input name="p12" type="radio" className="option" onChange={() => alteraP12(1)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p12" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP12(1)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Kawasaki Ninja ZX-10R
 						</label>
 						<br />
-						<label className="option">
-							<input name="p12" type="radio" className="option" onChange={() => alteraP12(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p12" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP12(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Kawasaki Versys 650
 						</label>
 					</div>
@@ -565,6 +599,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP12(false);
 							alteraVerP13(true);
 						}}>
@@ -579,23 +614,23 @@ function Moto() {
 
 					<img width="400px" src="https://www.motorede.com.br/wp-content/uploads/2017/07/ducati-monster-1200s-brasil-09-600x337.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p13" type="radio" className="option" onChange={() => alteraP13(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p13" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP13(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Motor com turbo
 						</label>
 						<br />
-						<label className="option">
-							<input name="p13" type="radio" className="option" onChange={() => alteraP13(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p13" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP13(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Sistema de suspensão adaptativo
 						</label>
 						<br />
-						<label className="option">
-							<input name="p13" type="radio" className="option" onChange={() => alteraP13(1)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p13" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP13(1)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Design naked e motor de 1198cc
 						</label>
 						<br />
-						<label className="option">
-							<input name="p13" type="radio" className="option" onChange={() => alteraP13(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p13" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP13(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							Sistema de frenagem ABS
 						</label>
 					</div>
@@ -605,6 +640,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP13(false);
 							alteraVerP14(true);
 						}}>
@@ -622,23 +658,23 @@ function Moto() {
 						src="https://storage.googleapis.com/images-homolog-moto.usadosbr.com/img/montadoras/galery/Road_King_Police_FLHPI+Road_King_Police_FLHPI+jpg1458309264-v1.jpg"
 					/>
 					<div className="options">
-						<label className="option">
-							<input name="p14" type="radio" className="option" onChange={() => alteraP14(0)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p14" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP14(0)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Yamaha XT 660
 						</label>
 						<br />
-						<label className="option">
-							<input name="p14" type="radio" className="option" onChange={() => alteraP14(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p14" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP14(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Honda CB 500X
 						</label>
 						<br />
-						<label className="option">
-							<input name="p14" type="radio" className="option" onChange={() => alteraP14(1)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p14" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP14(1)+alteraSelecionado(["", "", "selecionado", ""])} />
 							Harley-Davidson Road King
 						</label>
 						<br />
-						<label className="option">
-							<input name="p14" type="radio" className="option" onChange={() => alteraP14(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p14" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP14(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							BMW R 1200 RT
 						</label>
 					</div>
@@ -648,6 +684,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP14(false);
 							alteraVerP15(true);
 						}}>
@@ -662,23 +699,23 @@ function Moto() {
 
 					<img width="400px" src="./img/bico_de_pato.jpg" />
 					<div className="options">
-						<label className="option">
-							<input name="p15" type="radio" className="option" onChange={() => alteraP15(1)} />
+						<label className={"option " + selecionado[0]}>
+							<input name="p15" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP15(1)+alteraSelecionado(["selecionado", "", "", ""])} />
 							Suzuki DR800
 						</label>
 						<br />
-						<label className="option">
-							<input name="p15" type="radio" className="option" onChange={() => alteraP15(0)} />
+						<label className={"option " + selecionado[1]}>
+							<input name="p15" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP15(0)+alteraSelecionado(["", "selecionado", "", ""])} />
 							Yamaha Crosser{" "}
 						</label>
 						<br />
-						<label className="option">
-							<input name="p15" type="radio" className="option" onChange={() => alteraP15(0)} />
+						<label className={"option " + selecionado[2]}>
+							<input name="p15" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP15(0)+alteraSelecionado(["", "", "selecionado", ""])} />
 							CBR 450 SR
 						</label>
 						<br />
-						<label className="option">
-							<input name="p15" type="radio" className="option" onChange={() => alteraP15(0)} />
+						<label className={"option " + selecionado[3]}>
+							<input name="p15" type="radio" className={"option " + selecionado[0]} onChange={() => alteraP15(0)+alteraSelecionado(["", "", "", "selecionado"])} />
 							CB 250
 						</label>
 					</div>
@@ -688,6 +725,7 @@ function Moto() {
 					<button
 						className="btn"
 						onClick={() => {
+                            alteraSelecionado(["", "", "", ""]);
 							alteraVerP15(false);
 							alteraVerFinal(true);
 						}}>

@@ -80,14 +80,18 @@ h1 {
     flex-direction: column;
     gap: 10px;
     margin-top: 15px;
+
+    width: 80%;
 }
 
 .option {
-    display: flex;
+    
+    text-align: center;
     align-items: center;
-    justify-content: start;
-    width: 100%;
-    padding: 12px;
+    align-content: center;
+    
+
+    padding: 20px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -102,6 +106,17 @@ h1 {
 /* Efeito de hover nas opções */
 .option:hover {
     background: #d9c6f9;
+}
+
+.selecionado {
+  background: #732deb;
+  color: white;
+}
+
+
+.option:checked {
+  background-color: #d9c6f9;
+  background: #d9c6f9;
 }
 
 /* Texto maior para destaque */
@@ -303,5 +318,18 @@ h1 {
     }
   }
   
+  input[type="radio"] {
+    display: none;
+  }
+
+.p12{
+  display: flex;
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+
+  left:265px;
+} 
 
 
